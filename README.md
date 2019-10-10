@@ -1,11 +1,3 @@
 # princeton-hpr-2019
 
-Daphne Barretto
-
-Ezra Edelman
-
-Mary Davis
-
-Frank Lu
-
-Ish Kaul
+Software Team: Daphne Barretto, Henry Tang, Mary Davis
