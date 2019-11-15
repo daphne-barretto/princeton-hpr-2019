@@ -1,3 +1,3 @@
 # princeton-hpr-2019
 
-Software Team: Daphne Barretto, Henry Tang, Mary Davis
+Software Sub-Team Leads: Daphne Barretto, Henry Tang
