@@ -38,7 +38,7 @@ void setup()
   if (myFile) {
     Serial.print("Writing to file...");
     myFile.println();
-    myFile.println("L1 11/16/19 Launch Data");
+    myFile.println("L1 11/23/19 Launch Data");
   // close the file:
     myFile.close();
     Serial.println("done.");
@@ -65,15 +65,20 @@ void loop(){
   float pressure = sensor.readPressure();
   float temperature = sensor.readTempF();
 
+  unsigned long time = millis();
+
   //  write sensor values to serial
+
+  Serial.print("Time(ms): ");
+  Serial.print(time);
   
-  Serial.print(" Altitude(ft):");
+  Serial.print("\tAltitude(ft):");
   Serial.print(altitude, 2);
 
-  Serial.print(" Pressure(Pa):");
+  Serial.print("\tPressure(Pa):");
   Serial.print(pressure, 2);
   
-  Serial.print(" Temp(f):");
+  Serial.print("\tTemp(f):");
   Serial.print(temperature, 2);
 
   Serial.println();
@@ -83,14 +88,17 @@ void loop(){
   myFile = SD.open("test.txt", FILE_WRITE);
   
   if (myFile) {
+
+    myFile.print("Time(ms): ");
+    myFile.print(time);
     
-    myFile.print(" Altitude(ft):");
+    myFile.print("\tAltitude(ft):");
     myFile.print(altitude, 2);
 
-    myFile.print(" Pressure(Pa):");
+    myFile.print("\tPressure(Pa):");
     myFile.print(pressure, 2);
     
-    myFile.print(" Temp(f):");
+    myFile.print("\tTemp(f):");
     myFile.print(temperature, 2);
     
     myFile.println();
@@ -100,5 +108,7 @@ void loop(){
     // if the file didn't open, print an error:
     Serial.println("error opening test.txt");
   }
+
+  delay(500);
 
 }
